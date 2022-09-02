@@ -1,21 +1,25 @@
 import * as components from "./components/index.js"
+import data from './components/data.js'
 
-class AppContainer extends HTMLElement{
-    constructor(){
+class AppContainer extends HTMLElement {
+    constructor() {
         super();
-        this.attachShadow({ mode: 'open' })
+        this.attachShadow({
+            mode: 'open'
+        })
     }
 
-    conectedCallback(){
+    connectedCallback() {
         this.render();
     }
     render() {
         data.forEach((element) => {
-          this.shadowRoot.innerHTML += `
-          <my-profile uuid="${element.id}" name="${element.name}" username="${element.username}" email="${element.email}"></my-profile>
+            this.shadowRoot.innerHTML += `
+          <my-profile uuid="${element.id}" name="${element.name}" description="${element.description}" age="${element.age}">pictureprofile="${element.pictureprofile}"></my-profile>
           `;
         });
-        this.shadowRoot.innerHTML += `<my-counter></my-counter>`;
-      }
+
+
+    }
 }
 customElements.define('app-container', AppContainer);

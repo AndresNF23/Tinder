@@ -1,7 +1,7 @@
 class ProfileTinder extends HTMLElement{
 
     static get observedAttributes() {
-        return["name","age","description","profilepicture",""];   
+        return["uuid","name","age","description","profilepicture"];   
     }
 
     constructor(){
@@ -20,13 +20,14 @@ class ProfileTinder extends HTMLElement{
     
     render(){
         this.shadowRoot.innerHTML = `<link rel="stylesheet" href="/src/components/profileTinder/styles.css">
+        <section class="tinder">
         <header class="header">
-        <img src=".icons/LogoTinder.png" />
+        <img class="logo" src="./src/icons/LogoTinder.png" />
     </header>
     <section class="section">
         <article class="article article--1">
             <article class="imagen">
-                <img src= "${this.pictureprofile}" />
+                <img class="profileimg" src= "./src/icons/persona.jpg" />
             </article>
             <article class="description">
                 <div class="titles">
@@ -34,7 +35,7 @@ class ProfileTinder extends HTMLElement{
                     <h2 id="age" class="age">${this.age}</h2>
                 </div>
                 <div class="subtitle">
-                    <h3 class="sub"></h3>
+                    <p class="sub">${this.description}</p>
 
                 </div>
 
@@ -42,10 +43,11 @@ class ProfileTinder extends HTMLElement{
 
         </article>
         <article class="article article--2">
-        <img class="equis" src="./icons/Equis.png"></img>
-        <img class="like"src="./icons/Like.png"></img>
+            <img class="icon equis" src="./src/icons/Equis.png"></img>
+            <img class="icon like"src="./src/icons/Like.png"></img>
         </article>
 
+    </section>
     </section>`;
         }
     }
