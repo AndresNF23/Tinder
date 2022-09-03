@@ -1,6 +1,8 @@
 import * as components from "./components/index.js"
 import data from './components/data.js'
 
+console.log(data);
+
 class AppContainer extends HTMLElement {
     constructor() {
         super();

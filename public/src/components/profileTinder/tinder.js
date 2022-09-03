@@ -38,19 +38,17 @@ class ProfileTinder extends HTMLElement{
                     <p class="sub">${this.description}</p>
 
                 </div>
-
+                
             </article>
-
         </article>
-        <article class="article article--2">
-            <img class="icon equis" src="./src/icons/Equis.png"></img>
-            <img class="icon like"src="./src/icons/Like.png"></img>
-        </article>
-
+            <div class="contadores">
+            <my-counter></my-counter>
+            <my-counter2></my-counter2>
+            </div>
+  
     </section>
     </section>`;
         }
     }
-
     customElements.define('my-profile', ProfileTinder);
     export default ProfileTinder;
